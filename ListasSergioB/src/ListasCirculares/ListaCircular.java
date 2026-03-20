@@ -22,11 +22,11 @@ public class ListaCircular<T>{
 
         if (isEmpty()){
             ultimo =temp;
-            ultimo.siguiente =ultimo;}
+            ultimo.siguiente =ultimo;} //Si la lista esta vacia, asigna el nuevo dato como ultimo, y se asigna a si mismo como siguiente
         else{
-            temp.siguiente =ultimo.siguiente;
-            ultimo.siguiente =temp;
-            ultimo =temp;
+            temp.siguiente =ultimo.siguiente;     //El nuevo nodo apunta al primero
+            ultimo.siguiente =temp;    // El último apunta al nuevo nodo
+            ultimo =temp;             // Se actualiza el último
         }
         size++;
     }
@@ -38,7 +38,7 @@ public class ListaCircular<T>{
         do {
             System.out.print(temp.dato + " -> ");
             temp =temp.siguiente;
-        } while (temp !=ultimo.siguiente);
+        } while (temp !=ultimo.siguiente);  // Repite mientras queden elementos
 
         System.out.println("  ...");
     }
